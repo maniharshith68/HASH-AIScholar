@@ -54,8 +54,8 @@ You can find the sample files we used, and the screenshots of the content genera
 Make sure that after the repo is cloned, add your relevant API keys in config.py in your local repo.
 
 ```bash
-git clone https://github.com/yourusername/ai-scholar.git
-cd ai-scholar
+git clone https://github.com/yourusername/Hash-AIScholar.git
+cd Hash-AIScholar
 pip install -r requirements.txt
 streamlit run main.py
 
