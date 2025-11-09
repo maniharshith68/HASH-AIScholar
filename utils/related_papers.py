@@ -1,20 +1,4 @@
-# utils/related_papers.py
-import openai
-from config import OPENAI_API_KEY
-
-openai.api_key = OPENAI_API_KEY
-
-def suggest_related_papers(text):
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[{"role": "user", "content": f"Suggest 5 related academic papers based on this:\n{text}"}],
-        temperature=0.7
-    )
-    return response.choices[0].message.content.strip()
-
-
-
-
+# Semantic vector search and generation.
 # from sentence_transformers import SentenceTransformer
 # from sklearn.metrics.pairwise import cosine_similarity
 # from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
@@ -46,4 +30,19 @@ def suggest_related_papers(text):
 
 #     return suggestions
 
-# # Usage: corpus_texts would be abstracts or short descriptions of papers in your corpus.
+
+
+# utils/related_papers.py
+import openai
+from config import OPENAI_API_KEY
+
+openai.api_key = OPENAI_API_KEY
+
+def suggest_related_papers(text):
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": f"Suggest 5 related academic papers based on this:\n{text}"}],
+        temperature=0.7
+    )
+    return response.choices[0].message.content.strip()
+
